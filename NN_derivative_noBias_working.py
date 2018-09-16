@@ -24,9 +24,6 @@ class Neural_Network(object):
         # here we will initialize the weights
         self.Win = np.random.randn(number_of_inputs, number_of_neurons)
         self.Wout = np.random.randn(number_of_neurons, number_of_output_neurons)
-#        self.WinNew=self.Win
-#        self.WoutNew=self.Wout
-
 
     def yHat_calculator(self,X):
         #this will produce an estiamte of the output based on the inputs and the weights
@@ -36,15 +33,6 @@ class Neural_Network(object):
         self.yHat = self.sigmoid(self.act2)
         return self.yHat
     
-#    def yHat_calculatorNew(self,X):
-#        #this will produce an estiamte of the output based on the inputs and the weights
-#        self.act1 = np.dot(X,self.WinNew)
-#        self.sig_act1 = self.sigmoid(self.act1)
-#        self.act2 = np.dot(self.sig_act1,self.WoutNew)
-#        self.yHat = self.sigmoid(self.act2)
-#        return self.yHat
-
-
     def cost_calculator(self,Y):
         self.yHat=self.yHat_calculator(X)
         self.cost = (sum(((Y-self.yHat)**2)/2))/number_of_training_sets 
